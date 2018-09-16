@@ -1,0 +1,18 @@
+{
+  "name": "package-assets",
+  "version": "0.1.0",
+  "description": "Copy static assets from node packages",
+  "main": "assets.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Ryan Liddle",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "find-root": "^1.1.0",
+    "recursive-copy": "^2.0.9"
+  }
+}
