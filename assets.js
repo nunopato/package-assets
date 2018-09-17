@@ -3,7 +3,7 @@ var findRoot = require('find-root');
 var path = require('path');
 
 //resolves the source asset directory by finding
-//the package root of the package and searching for
+//the root of the package and searching for
 //the "source" directory at this location
 var resolveSourceDir = (source) => {
     //extract the file path
