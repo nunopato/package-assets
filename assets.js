@@ -1,6 +1,8 @@
 var copy = require('recursive-copy');
 var findRoot = require('find-root');
+var fs = require('fs');
 var path = require('path');
+
 
 //resolves the source asset directory by finding
 //the root of the package and searching for
@@ -28,7 +30,7 @@ var resolveDestDir = (dest) => {
 // directory into an optional directory.
 var copyAssetDir = (source, dest="") => {
     if (source === undefined) {
-        console.error("Error: copyDir takes a source directory and an optional destination directory.");
+        console.error("Error: copyAssetDir takes a source directory and an optional destination directory.");
         return;
     }
     //copy source to cwd
@@ -41,8 +43,24 @@ var copyAssetDir = (source, dest="") => {
     });
 }
 
+//Reads a source asset and returns a string 
+//Args:
+// path (required): the relative path to the resource
+// from the package root.
+// options (optional): passed to fs.readFileSync
+// see: https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options
+var readAsset = (path, options="") => {
+    if (options === undefined) {
+        options = {};
+    }
+    return fs.readFileSync(resolveSourceDir(path), options);
+}
+
 module.exports = {
     copyAssetDir : copyAssetDir,
+    readAsset : readAsset,
     resolveSourceDir : resolveSourceDir,
     resolveDestDir : resolveDestDir
 }
+
+
