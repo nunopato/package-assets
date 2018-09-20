@@ -24,7 +24,9 @@ Suppose we wanted to copy an asset directory into the `cwd`, we could use `copyA
 
 ```js
 const PackageAssets = require('package-assets');
-const assets = PackageAssets('config/');
+
+//default dir to your package root
+const assets = PackageAssets();
 
 //copy assets into dist
 assets.copyAssetDir('dist');
