@@ -2,7 +2,7 @@ const fs = require('fs');
 
 //import PackageAssets 
 const PackageAssets = require('../index');
-const manager = PackageAssets();
+const assets = PackageAssets();
 
 test('ReadAsset', () => {
     var myConfig = JSON.parse(manager.readAsset('package.json'));  

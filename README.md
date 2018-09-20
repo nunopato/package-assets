@@ -6,40 +6,39 @@ Manage static assets in your node packages.
 Suppose we wanted to read a config file into an object, we could use `readAssetFile`.
 
 ```js
-var {readAsset} = require('package-assets');
+const PackageAssets = require('package-assets');
+const assets = PackageAssets('config/');
 
-var myConfig = JSON.parse(readAsset('config/myConfig.json'));  
+var myConfig = JSON.parse(assets.readAsset('configFile.json'));  
 ```
 
 ### Args
 ```js
-readAssetFile(path);
+assets.readAssetFile(path);
 ```
 
->`path` the relative path from the package root of the project
+>`path` the relative path from the asset root of the project
 
 Suppose we wanted to copy an asset directory into the `cwd`, we could use `copyAssetDir`.
 
 
 ```js
-var {copyAssetDir} = require('package-assets');
+const PackageAssets = require('package-assets');
+const assets = PackageAssets('config/');
 
 //copy assets into dist
-copyAssetDir('assets', 'dist');
+assets.copyAssetDir('dist');
 
 //OR copy assets into cwd
-copyAssetDir('assets');
+assets.copyAssetDir();
 ```
 
 ### Args
 ```js
-copyAssetDir(src, dest);
+assets.copyAssetDir(dest);
 ```
 
->`src` the directory name or path in the root level of package.
-
 >`dest` an optional destination directory name to copy the asset resources to within the current working directory. By default assets will just be unpacked from the source directory directly into the working directory.
-
 
 ## License
 
