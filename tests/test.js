@@ -5,6 +5,9 @@ const PackageAssets = require('../index');
 const assets = PackageAssets();
 
 test('ReadAsset', () => {
-    var myConfig = JSON.parse(manager.readAsset('package.json'));  
-    expect(myConfig["name"]).toEqual("package-assets");
+    assets.readAsset('package.json')
+    .then((result) => {
+        var myConfig = JSON.parse(result);  
+        expect(myConfig["name"]).toEqual("package-assets");
+    })
 });
