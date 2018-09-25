@@ -35,7 +35,7 @@ assets.readAssetFile(path)
 ### .copyAssetDir
 
 ```js
-//OR copy assets into cwd
+//copy config into cwd
 assets.copyAssetDir()
 .then((result) => {
     console.log(result.length);
