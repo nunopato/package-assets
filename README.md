@@ -8,12 +8,12 @@ To get started:
 ```js
 const PackageAssets = require('package-assets');
 
-//default dir to your package root
+//set asset directory
 const assets = PackageAssets('config');
 ```
 
-
 ### .readAssetFile
+Reads an asset file from the asset directory.
 
 ```js
 assets.readAsset('configFile.json')
@@ -33,9 +33,9 @@ assets.readAssetFile(path)
 
 
 ### .copyAssetDir
+Copies the asset directory to the current working directory. Takes an optional argument `dest`. 
 
 ```js
-//copy config into cwd
 assets.copyAssetDir()
 .then((result) => {
     console.log(result.length);
@@ -50,6 +50,30 @@ assets.copyAssetDir(dest)
 ```
 
 >`dest` an optional destination directory name to copy the asset resources to within the current working directory. By default assets will just be unpacked from the source directory directly into the working directory.
+
+### .resolveAssetDir
+Resolves the full file path of the asset directory in your given package.
+
+```js
+var path = assets.resolveAssetDir()
+
+console.log(path);
+```
+
+### .setAssetDir
+Setter method for the asset directory on the PackageAssets object.
+
+```js
+var success = assets.setAssetDir('my/new/assets/dir');
+
+console.log(success);
+```
+
+```js
+assets.setAssetDir(path)
+```
+
+>`path` an required asset directory relative to package root.
 
 ## License
 
