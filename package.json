@@ -2,6 +2,7 @@
   "name": "package-assets",
   "version": "0.1.0",
   "description": "Manage static assets from node packages",
+  "repository": "https://github.com/rmliddle/package-assets",
   "main": "assets.js",
   "scripts": {
     "test": "jest"
@@ -14,5 +15,9 @@
   "dependencies": {
     "find-root": "^1.1.0",
     "recursive-copy": "^2.0.9"
-  }
+  },
+  "keywords": [
+    "assets",
+    "static"
+  ]
 }

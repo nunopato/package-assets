@@ -22,3 +22,8 @@ test('ResolveAssetDir', () => {
     expect(assets.setAssetDir('tests')).toEqual(true);
     expect(assets.resolveAssetDir()).toEqual(expect.stringContaining('tests'));
 });
+
+test('PackageAssets', () => {
+    const newAssets = PackageAssets('tests');
+    expect(assets.resolveAssetDir()).toEqual(expect.stringContaining('tests'));
+});

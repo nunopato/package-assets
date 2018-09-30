@@ -2,6 +2,12 @@
 
 Manage static assets in your node packages. 
 
+## Installation
+
+```sh
+npm install package-assets
+```
+
 ## Usage
 To get started:
 
