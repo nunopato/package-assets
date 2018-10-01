@@ -1,4 +1,6 @@
 # Package Assets
+[![Build Status](https://travis-ci.com/rmliddle/package-assets.svg?branch=master)](https://travis-ci.com/rmliddle/package-assets) ![NpmLicense](https://img.shields.io/npm/l/package-assets.svg)
+
 
 Manage static assets in your node packages. 
 
