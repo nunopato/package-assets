@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/rmliddle/package-assets.svg?branch=master)](https://travis-ci.com/rmliddle/package-assets) ![NpmLicense](https://img.shields.io/npm/l/package-assets.svg)
 
 
-Manage static assets in your node packages. 
+Conveniently handle static assets in your node package.
 
 ## Installation
 
@@ -34,10 +34,27 @@ assets.readAsset('configFile.json')
 ```
 
 ```js
-assets.readAssetFile(path)
+.readAssetFile(path)
 ```
 
 >`path` the relative path from the asset root of the project  
+
+### .writeAsset
+
+Writes a string or buffer out to the asset file.
+
+```js
+var string = "Hello Package Assets!";
+assets.write("hello.txt", string)
+.then(success => console.log(success));
+```
+
+```js
+.copyAssetDir(fileName, fileContent)
+```
+
+>`fileName` (required) the file name in which to save your asset content, under the asset path.
+> `fileContent` (optional) the file content to save
 
 
 ### .copyAssetDir
@@ -54,7 +71,7 @@ assets.copyAssetDir()
 ```
 
 ```js
-assets.copyAssetDir(dest)
+.copyAssetDir(dest)
 ```
 
 >`dest` an optional destination directory name to copy the asset resources to within the current working directory. By default assets will just be unpacked from the source directory directly into the working directory.
@@ -78,7 +95,7 @@ console.log(success);
 ```
 
 ```js
-assets.setAssetDir(path)
+.setAssetDir(path)
 ```
 
 >`path` an required asset directory relative to package root.
