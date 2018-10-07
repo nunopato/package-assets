@@ -51,8 +51,8 @@ assets.write("hello.txt", string)
 .writeAsset(fileName, fileContent)
 ```
 
->`fileName` (required) the file name in which to save your asset content, under the asset path.
-> `fileContent` (optional) the file content to save
+> `fileName` (required) the file name in which to save your asset content, under the asset path.  
+> `fileContent` (optional) the file content to save.
 
 
 ### .copyAssetDir
