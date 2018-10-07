@@ -48,7 +48,7 @@ assets.write("hello.txt", string)
 ```
 
 ```js
-.copyAssetDir(fileName, fileContent)
+.writeAsset(fileName, fileContent)
 ```
 
 >`fileName` (required) the file name in which to save your asset content, under the asset path.
