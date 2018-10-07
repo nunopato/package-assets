@@ -28,9 +28,7 @@ assets.readAsset('configFile.json')
 .then((result) => {
     return JSON.parse(result);
 })
-.catch((err) => {
-    console.log(err);
-});
+.catch(err => console.log(err));
 ```
 
 ```js
@@ -65,9 +63,7 @@ assets.copyAssetDir()
 .then((result) => {
     console.log(result.length);
 })
-.catch((err) => {
-    console.log(err);
-});
+.catch(err => console.log(err));
 ```
 
 ```js
