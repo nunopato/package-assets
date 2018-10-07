@@ -25,5 +25,17 @@ test('ResolveAssetDir', () => {
 
 test('PackageAssets', () => {
     const newAssets = PackageAssets('tests');
-    expect(assets.resolveAssetDir()).toEqual(expect.stringContaining('tests'));
+    expect(newAssets.resolveAssetDir()).toEqual(expect.stringContaining('tests'));
+});
+
+test('WriteAsset', () => {
+    const newAssets = PackageAssets('tests');
+    newAssets.writeAsset('asset_test.txt', JSON.stringify({"test": "WriteAsset"}))
+    .then(() => {
+        return newAssets.readAsset('asset_test.txt');
+    })
+    .then((result) => {
+        var testContent = JSON.parse(result);  
+        expect(testContent["test"]).toEqual("WriteAsset");
+    });
 });
