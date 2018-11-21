@@ -1,6 +1,6 @@
 {
   "name": "package-assets",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Manage static assets from node packages",
   "repository": "https://github.com/rmliddle/package-assets",
   "main": "assets.js",
